@@ -16,4 +16,4 @@ EXPOSE 8000
 RUN php src/startup.php
 
 # When the container starts, serve the application using PHP's built-in server
-CMD ["php", "-S", "localhost:8000"]
+CMD ["php", "-S", "0.0.0.0:8000"]
