@@ -1,21 +1,47 @@
-<b><u>Instructions</u></b>
+# Instructions
 
+## Step 1: Installation
 
-<b><u>Step 1: Installation</u></b>
+Clone the repository or download and unzip it to your preferred directory.
 
-Clone the repository, or simple download and unzip it to the directory of your choosing.
+## Step 2: Startup
 
-<b><u>Step 2: Startup</u></b>
+In the installation directory, run the `startup.bat` script. This will start the web server in a command prompt and open the web app in your default browser. **Note:** Do not close the command prompt as it will close the server and reset your progress.
 
+## Step 3: Usage
 
-In the installation folder, open startup.bat ー this will open the web server in a command prompt, and then it will open the webapp in your default browser.
-
-<b>IMPORTANT NOTE:</b> Do NOT close the prompt that opens up with the web server, as that will close the server and reset your progress.
-
-<b><u>Step 3: Usage</u></b>
-
+Navigate to http://localhost:8000/public/index.php
 Follow the instructions in the user manual (see Chapter 6 for vulnerabilities).
 
-<b><u>Step 4: Closing the web server</u></b>
+## Step 4: Closing the Web Server
 
-Simply close the Windows command prompt, and the web server will be closed immediately. Restarting the webserver is as simple as opening startup.bat again, but note that it will reset the database automatically when you do.
+To stop the web server, simply close the command prompt. The server will be closed immediately. If you want to restart the server, run the `startup.bat` script again. Note that it will reset the database automatically.
+
+## Docker
+
+### Building the Docker Image
+
+Building and Running
+
+```sh
+docker build -t my-webserver-image .
+docker run -d --name my-webserver-container -p 8000:8000 my-webserver-image
+```
+
+Stopping
+
+```sh
+docker stop my-webserver-container
+```
+
+Removing
+
+```sh
+docker rm my-webserver-container
+```
+
+Get Logs
+
+```sh
+docker logs my-webserver-container
+```
